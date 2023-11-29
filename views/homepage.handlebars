@@ -1,1 +1,8 @@
-{{#each post as |post| }}
+{{#each blogPost as |blogPost| }}
+<div class="row mb-4 project">
+    <div class="col-md-5">
+        <h2>
+            <a href="/models/blogPost.js/{{blogPost.id}}">{{blogPost.name}}</a>
+        </h2>
+    </div>
+</div>
