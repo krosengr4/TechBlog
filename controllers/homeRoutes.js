@@ -69,6 +69,7 @@ router.get('/', async (req, res) => {
       res.redirect('/profile');
       return; 
     }
+    console.log('You clicked the login page');
 
     res.render('login');
   });
