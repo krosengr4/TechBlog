@@ -1,9 +1,14 @@
 const loginFormHandler = async (event) => {
     event.preventDefault();
-    alert(document.querySelector('#password-login').value.trim, "login btn clicked");
     
     const userName = document.querySelector('#user-login').value.trim();
     const password = document.querySelector('#password-login').value.trim();
+
+    // alert(userName);
+    // alert(password);
+    let x = JSON.stringify({ userName, password });
+    alert(x);
+
     if (userName && password) {
         const response = await fetch('/api/users/login', {
             method: 'POST',
@@ -14,7 +19,7 @@ const loginFormHandler = async (event) => {
         if (response.ok) {
             document.location.replace('/profile');
         } else {
-            alert(response.statusText);
+            alert(response.status);
         }
     }
 };

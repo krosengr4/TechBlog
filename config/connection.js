@@ -14,12 +14,13 @@ if (process.env.JAWSDB_URL) {
         'root',
         '611854kr',
         {
-            host: 'localhost',
+            host: 'localhost', //!<--- "root" or "127.0.0.1" or "localhost"
             dialect: 'mysql',
             port: 3306
         }
         
-    );
+        );
+        // console.log(DB_NAME);
 };
 
 module.exports = sequelize;

@@ -1,12 +1,12 @@
 const { Model, DataTypes } = require('sequelize'); 
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
-const { findLastKey } = require('lodash');
+// const { findLastKey } = require('lodash');
 
 class User extends Model {
     checkPassword(loginPw) {
         return bcrypt.compareSync(loginPw, this.password);
-    };
+    }
 };
 
 User.init ( 
@@ -21,7 +21,7 @@ User.init (
             type: DataTypes.STRING,
             allowNull: false,
           },
-          username: {
+          userName: {
             type: DataTypes.STRING,
             allowNull: false,
             unique: true,
