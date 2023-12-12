@@ -20,6 +20,9 @@ header, .project:not(:last-child) {
     align-items: center;
     background-color: rgb(29, 29, 81);
     border-bottom: 100px;
+    position: relative;
+    top: 16px;
+    border-radius: 72px;
   }
 
   .title-link {
