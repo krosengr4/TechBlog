@@ -13,14 +13,14 @@
     <header class="header">
       <h1>
         <span role="img" aria-label="money" class="main-icon">🍞</span>
-        <a href="/" class="title-link">Toaster-Post!</a>
+        <a href="/" class="title-link">Toaster Post!</a>
       </h1>
       <nav>
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
-        <a href="/profile" class="header-link">| Profile | </a>
-        <a href="/post" class="header-link">| New Post | </a> 
-        <a href="/" class="header-link" id="logout">| Logout | </a>
+        <a href="/profile" class="header-link"> Profile  </a>
+        <a href="/post" class="header-link">|||  New Post  ||| </a> 
+        <a href="/" class="header-link" id="logout"> Logout  </a>
         {{else}}
         <a href="/login" class="header-link">| Login |</button></a>
         {{/if}}

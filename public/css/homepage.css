@@ -1,9 +1,19 @@
+.post-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.current-posts {
+    font-size: 50px;
+}
+
 .post-title-link {
-    font-size: 40px;
+    color: rgb(22, 125, 125);
+    font-size: 32px;
 }
-.post-description{
-    font-size: 25px;
-}
+
 .post-author{
-    font-size: 15px;
+    font-size: 17px;
 }
