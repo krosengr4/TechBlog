@@ -1,4 +1,31 @@
-{{#each blogPost as |blogPost| }}
+<div class="post-container">
+  {{#if blogPost.length}}
+  <div class="col-md-6 post-list">
+    <h3 class="current-post">Current Posts:</h3>
+
+    {{#each blogPost as |blogPost|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4 class="post-title-link"><a href="/blogPost/{{blogPost.id}}">{{blogPost.name}}</a></h4>
+        <p class="post-description">{{blogPost.description}}</p>
+        <p class="post-author">Posted by: {{user.name}} </p>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+</div>
+
+<script src="./js/homepage.js"></script>
+<link rel="stylesheet" href="/css/homepage.css">
+
+
+      {{!-- <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{blogPost.id}}">DELETE</button>
+      </div> --}}
+
+{{!-- !Link with css --}}
+{{!-- {{#each blogPost as |blogPost| }}
 <div class="row mb-4 project">
     <div class="col-md-5">
         <h2>
@@ -6,26 +33,4 @@
         </h2>
     </div>
     {{/each}}
-</div>
-
-  {{#if blogPost.length}}
-  <div class="col-md-6 post-list">
-    <h3>Current Posts:</h3>
-
-    {{#each blogPost as |blogPost|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/blogPost/{{blogPost.id}}">{{blogPost.name}}</a></h4>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{blogPost.id}}">DELETE</button>
-      </div>
-    </div>
-    {{/each}}
-  </div>
-  {{/if}}
-
-
-
-
-{{!-- !Link with css --}}
+</div> --}}
