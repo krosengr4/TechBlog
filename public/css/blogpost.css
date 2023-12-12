@@ -2,4 +2,17 @@
     display: flex;
     flex-direction: column;
     text-align: center;
+    position: relative;
+    top: 66px;
+}
+h2 {
+    font-size: 38px;
+}
+
+.main-desc {
+    font-size: 20px;
+}
+
+.created-by {
+    font-size: 15px;
 }
