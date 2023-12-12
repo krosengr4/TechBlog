@@ -6,8 +6,8 @@ const loginFormHandler = async (event) => {
 
     // alert(userName);
     // alert(password);
-    let x = JSON.stringify({ userName, password });
-    alert(x);
+    // let x = JSON.stringify({ userName, password });
+    // alert(x);
 
     if (userName && password) {
         const response = await fetch('/api/users/login', {
@@ -27,7 +27,7 @@ const loginFormHandler = async (event) => {
 const signupFormHandler = async (event) => {
     event.preventDefault();
 
-    alert('you clicked sign in');
+    // alert('you clicked sign in');
 
     const userName = document.querySelector('#user-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();

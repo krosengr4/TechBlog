@@ -4,28 +4,10 @@
   </div>
 </div>
 
-{{!-- <div class="row mt-4">
-  <div class="col-md-6">
-    <h3>What would you like to blog about?</h3>
+<div class="new-post">
+  <button class="newPost-btn">New Post!</button>
+</div>
 
-    <form class="form mew-post-form">
-      <div class="form-group">
-        <label for="post-title">Post Title:</label>
-        <input class="form-input" type="text" id="post-title" name="post-title" />
-      </div>
-      {{!-- <div class="form-group">
-        <label for="project-funding">needed funding ($):</label>
-        <input class="form-input" type="number" id="project-funding" name="project-funding" />
-      </div> --}}
-      <div class="form-group">
-        <label for="blog-post">Your Post:</label>
-        <textarea class="form-input" id="blog-post" name="blog-post"></textarea>
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Post!</button>
-      </div>
-    </form>
-  </div> --}}
 
   {{#if blogPosts.length}}
   <div class="col-md-6 post-list">
@@ -43,6 +25,28 @@
     {{/each}}
   </div>
   {{/if}}
-</dv>
 
-{{!-- !Link with css --}}
+
+
+  <script src="./js/profile.js"></script>
+<link rel="stylesheet" href="/css/profile.css">
+
+{{!-- <div class="row mt-4">
+  <div class="col-md-6">
+    <h3>What would you like to blog about?</h3>
+
+    <form class="form mew-post-form">
+      <div class="form-group">
+        <label for="post-title">Post Title:</label>
+        <input class="form-input" type="text" id="post-title" name="post-title" />
+      </div>
+      <div class="form-group">
+        <label for="blog-post">Your Post:</label>
+        <textarea class="form-input" id="blog-post" name="blog-post"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Post!</button>
+      </div>
+    </form>
+  </div>
+</div> --}}

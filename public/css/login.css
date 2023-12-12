@@ -15,10 +15,37 @@ h2 {
 }
 
 .pass-and-user {
-    font-size: 16px;
+    font-size: 20px;
 }
 
 .signup-q {
-    font-size: 16px;
+    font-size: 20px;
 }
 
+.login-btn {
+    padding: 8px;
+    color: rgb(22, 83, 36);
+    background-color: rgb(29, 29, 81);
+    font-size: 20px;
+    position: relative;
+    left: 108px;
+}
+
+.login-btn:hover {
+    color: rgb(22, 83, 36);
+    background-color: lightgreen;
+}
+
+.signup-btn {
+    padding: 8px;
+    color: rgb(22, 83, 36);
+    background-color: rgb(29, 29, 81);
+    font-size: 20px;
+    position: relative;
+    left: 108px;
+}
+
+.signup-btn:hover {
+    color: rgb(22, 83, 36);
+    background-color: lightgreen;
+}

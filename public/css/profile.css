@@ -1,0 +1,13 @@
+.newPost-btn {
+    padding: 8px;
+    color: rgb(22, 83, 36);
+    background-color: rgb(29, 29, 81);
+    font-size: 20px;
+    position: relative;
+    left: 108px;
+}
+
+.newPost-btn:hover {
+    color: rgb(22, 83, 36);
+    background-color: lightgreen;
+}

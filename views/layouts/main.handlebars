@@ -12,17 +12,17 @@
   <div class="flex-column justify-space-around">
     <header class="header">
       <h1>
-        <span role="img" aria-label="money">🖱️</span>
-        <a href="/" class="title-link">TechBlog Post!</a>
+        <span role="img" aria-label="money" class="main-icon">🍞</span>
+        <a href="/" class="title-link">Toaster-Post!</a>
       </h1>
       <nav>
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
-        <a href="/profile" class="text-dark text-decoration-none btn btn-warning">Profile</a>
-        <a href="/post" class="text-dark text-decoration-none btn btn-warning">Write a New Post</a> 
-        <a href="/" class="no-button text-dark text-decoration-none btn btn-warning" id="logout">Logout</a>
+        <a href="/profile" class="header-link">| Profile | </a>
+        <a href="/post" class="header-link">| New Post | </a> 
+        <a href="/" class="header-link" id="logout">| Logout | </a>
         {{else}}
-        <a href="/login" class="header-link">Login</button></a>
+        <a href="/login" class="header-link">| Login |</button></a>
         {{/if}}
       </nav>
     </header>
