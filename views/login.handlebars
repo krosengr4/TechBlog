@@ -1,14 +1,14 @@
 <div class="row">
-  <div class="col-md-6">
+  <div class="prev-user-form">
     <h2>If you have an account, enter your credentials here: </h2>
 
     <form class="form login-form">
       <div class="form-group">
-        <label for="user-login">Username:</label>
+        <label for="user-login" class="pass-and-user">Username:</label>
         <input class="form-input" type="text" id="user-login" />
       </div>
       <div class="form-group">
-        <label for="password-login">Password:</label>
+        <label for="password-login" class="pass-and-user">Password:</label>
         <input class="form-input" type="password" id="password-login" />
       </div>
       <div class="form-group">
@@ -16,20 +16,20 @@
       </div>
     </form>
   </div>
-  <div class="col-md-6">
+  <div class="new-user-form">
     <h2>If you don't have an account, you can quickly make one here: </h2>
 
     <form class="form signup-form">
       <div class="form-group">
-        <label for="name-signup">First and Last Name:</label>
+        <label for="name-signup" class="signup-q">First Name:</label>
         <input class="form-input" type="text" id="name-signup" />
       </div>
       <div class="form-group">
-        <label for="user-signup">Create Username:</label>
+        <label for="user-signup" class="signup-q">New Username:</label>
         <input class="form-input" type="text" id="user-signup" />
       </div>
       <div class="form-group">
-        <label for="password-signup">Create password(must be 8 characters):</label>
+        <label for="password-signup" class="signup-q">Create password:</label>
         <input class="form-input" type="password" id="password-signup" />
       </div>
       <div class="form-group">
@@ -40,6 +40,7 @@
 </div>
 
 <script src="./js/login.js"></script>
+<link rel="stylesheet" href="/css/login.css">
 
 
 {{!-- !Link with css --}}

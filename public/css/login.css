@@ -1,0 +1,24 @@
+h2 {
+    font-size: 32px;
+}
+
+.prev-user-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.new-user-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pass-and-user {
+    font-size: 16px;
+}
+
+.signup-q {
+    font-size: 16px;
+}
+

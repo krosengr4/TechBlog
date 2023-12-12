@@ -5,27 +5,24 @@
       <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TechBlog</title>
-  {{!-- <link rel="stylesheet" href="/css/jass.css"> --}}
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body class="background"> 
   <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
+    <header class="header">
       <h1>
         <span role="img" aria-label="money">🖱️</span>
-        <a href="/" class="main-link">TechBlog Post!</a>
+        <a href="/" class="title-link">TechBlog Post!</a>
       </h1>
       <nav>
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
-        <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>
         <a href="/profile" class="text-dark text-decoration-none btn btn-warning">Profile</a>
+        <a href="/post" class="text-dark text-decoration-none btn btn-warning">Write a New Post</a> 
         <a href="/" class="no-button text-dark text-decoration-none btn btn-warning" id="logout">Logout</a>
-        <a href="/post" class="text-dark text-decoration-none btn btn-warning">Write a New Post</a> <!-- Make sure to change this. -->
         {{else}}
-        <a href="/login" class="login-link">login</a>
+        <a href="/login" class="header-link">Login</button></a>
         {{/if}}
       </nav>
     </header>
@@ -40,8 +37,12 @@
 
   <!-- Render script for logged in users only -->
   {{#if logged_in}}
-  <script src="/public/js/logout.js"></script>
+  <script src="/js/logout.js"></script>
   {{/if}}
-</body>
 
+  <h1> Hello! </h1>
+</body>
 </html> 
+
+
+  {{!-- <link rel="stylesheet" href="/css/jass.css"> --}}
