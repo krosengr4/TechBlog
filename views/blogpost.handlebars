@@ -1,7 +1,7 @@
-<div class="text-center">
+<div class="blogpost">
     <h2>{{name}}</h2>
     <p>{{description}}</p>
-    <p>Created by {{user.name}} on {{format_date date_created}}</p>
+    <p>Created by {{user.name}}</p>
 
     <p>
         <button class="btn btn-primary">I like 👍</button>
@@ -9,4 +9,8 @@
     </p>
 </div>
 
-{{!-- !Link with css --}}
+{{!-- Link with stylesheet and script --}}
+<script src="./js/blogpost.js"></script>
+<link rel="stylesheet" href="/css/blogpost.css">
+
+ {{!-- on {{format_date date_created}} --}}

@@ -1,7 +1,7 @@
 module.exports = {
     format_date: (date) => {
         // format the date as MM/DD/YYYY
-        return date.toLocalDateString();
+        // return date.toLocalDateString();
     },
     get_emoji: () => {
         const randomNum = Math.random();
