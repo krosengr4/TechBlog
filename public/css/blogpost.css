@@ -7,6 +7,8 @@
 }
 h2 {
     font-size: 38px;
+    color: rgb(15, 10, 2);
+    text-decoration-line: underline;
 }
 
 .main-desc {
@@ -14,5 +16,20 @@ h2 {
 }
 
 .created-by {
-    font-size: 15px;
+    font-size: 18px;
+    text-decoration: overline underline;
+}
+
+.like-btn {
+        padding: 12px;
+    color: rgb(22, 83, 36);
+    background-color: rgb(29, 29, 81);
+    font-size: 18px;
+}
+
+.dislike-btn {
+        padding: 12px;
+    color: rgb(22, 83, 36);
+    background-color: rgb(29, 29, 81);
+    font-size: 18px;
 }
