@@ -1,4 +1,5 @@
 <div class="post-container">
+  {{!-- {{log this.blogPost}}; --}}
   {{#if blogPost.length}}
   <div class="post-container">
     <h3 class="current-posts">Current Posts:</h3>
@@ -7,7 +8,7 @@
     <div class="row mb-2">
       <div class="col-md-8">
         <a href="/blogPost/{{blogPost.id}}"><h4 class="post-title-link">{{blogPost.name}}</h4></a>
-        <p class="post-author">Posted by: {{user.name}} </p>
+        <p class="post-author">Created by: {{user.name}} </p>
       </div>
     </div>
     {{/each}}

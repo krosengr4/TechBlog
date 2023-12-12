@@ -1,5 +1,21 @@
+<div class="col-md-6">
+<h3>Create a New Blog Post:</h3>
+{{!-- {{log this.logged_in}} --}}
 
-
+<form class="form new-post-form">
+    <div class="form-group">
+    <label for="post-title" class="post-title">Post Title:</label>
+    <input class="form-input" type="text" id="post-title" name="post-title" />
+    </div>
+    <div class="form-group">
+    <label for="post-desc" class="post-desc">Post Description:</label>
+    <textarea class="form-input" id="post-desc" name="post-desc"></textarea>
+    </div>
+    <div class="form-group">
+    <button type="submit" class="btn btn-primary">Create</button>
+    </div>
+</form>
+</div>
 
 
 
@@ -9,3 +25,5 @@
 
 
 {{!-- Link with stylesheet and script --}}
+<script src="./js/newPost.js"></script>
+<link rel="stylesheet" href="/css/newPost.css">

@@ -21,7 +21,7 @@ header, .project:not(:last-child) {
     background-color: rgb(29, 29, 81);
     border-bottom: 100px;
     position: relative;
-    top: 16px;
+    top: 6px;
     border-radius: 72px;
   }
 

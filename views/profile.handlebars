@@ -5,29 +5,32 @@
     </div>
   </div>
 
-  <div class="new-post">
-    <button class="newPost-btn">New Post!</button>
+<div class="new-post">
+    <a href="/newPost">New Post!</a>
   </div>
 </div>
 
-
+<div class="profile-posts">
   {{#if blogPost.length}}
-  <div class="col-md-6 post-list">
+  <div class="col-md-6">
     <h3>Your Posts:</h3>
 
     {{#each blogPost as |blogPost|}}
     <div class="row mb-2">
       <div class="col-md-8">
-        <h4><a href="/blogPost/{{blogPost.id}}">{{blogPost.name}}</a></h4>
+        <a href="/blogPost/{{blogPost.id}}"><h4 class="post-title-link">{{blogPost.name}}</h4></a>
       </div>
       <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{blogPost.id}}">DELETE</button>
+        <button class="post-list btn-sm btn-danger" data-id="{{blogPost.id}}">Delete</button>
+      </div>
+      <div>
+        <button class="update-btn" data-id="{{blogPost.id}}">Update</button>
       </div>
     </div>
     {{/each}}
   </div>
   {{/if}}
-
+</div>
 
 
 {{!-- Link with stylesheet and script --}}
@@ -36,7 +39,9 @@
 
 
 
-{{!-- <div class="profile-posts"></div> --}}
+{{!-- </div> --}}
+
+{{!-- <button class="newPost-btn"></button> --}}
 
 
 
