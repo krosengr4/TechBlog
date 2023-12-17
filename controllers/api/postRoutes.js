@@ -16,6 +16,7 @@ router.post('/', withAuth, async (req,res) => {
     }   
 });
 
+// Delete a post
 router.delete('/:id', withAuth, async (req, res) => {
     try {
       const postData = await BlogPost.destroy({
@@ -35,5 +36,12 @@ router.delete('/:id', withAuth, async (req, res) => {
       res.status(500).json(err);
     }
   });
+
+  // Update a post
+  router.put('/:id', (req, res) => {
+    BlogPost.update(req.body, {
+      where: { product_id: req.params.id }
+    })
+  })
 
   module.exports = router;
