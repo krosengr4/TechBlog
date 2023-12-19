@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
             },
         ],
     })
-    const blogPost = blogPostData.map((post) => post.get({ plain:true }));
+    const blogPost = blogPostData.map((blogPost) => blogPost.get({ plain:true }));
 
         // Pass serialized data and session flag into template
     res.render('homepage', { 
@@ -25,27 +25,29 @@ router.get('/', async (req, res) => {
     }
     });
 
-    router.get('/newPost', (req, res) => {
-      res.render('newPost', {
-        logged_in: req.session.logged_in
-      })
-  });
 
-    router.get('/blogPost/:id', async (req, res) => {
-        try {
-          const blogPostData = await BlogPost.findByPk(req.params.id, {
-            include: [
-              {
-                model: User,
-                attributes: ['name'],
-              },
-            ],
-          });
+router.get('/newPost', (req, res) => {
+  res.render('newPost', {
+    logged_in: req.session.logged_in
+  })
+});
+
+
+router.get('/blogPost/:id', async (req, res) => {
+    try {
+      const blogPostData = await BlogPost.findByPk(req.params.id, {
+        include: [
+          {
+            model: User,
+            attributes: ['name'],
+          },
+        ],
+});
       
-          const blogpost = blogPostData.get({ plain: true });
+    const blogPost = blogPostData.get({ plain: true });
       
           res.render('blogpost', {
-            ...blogpost,
+            ...blogPost,
             logged_in: req.session.logged_in
           });
         } catch (err) {
@@ -60,21 +62,21 @@ router.get('/', async (req, res) => {
         include: [{ model: BlogPost }],
       });
 
-      const blogPostData = await BlogPost.findAll({
-        include: [
-            {
-                model: User,
-                attributes: ['name'],
-            },
-        ],
-    });
+    //   const blogPostData = await BlogPost.findAll({
+    //     include: [
+    //         {
+    //             model: User,
+    //             attributes: ['name'],
+    //         },
+    //     ],
+    // });
 
       const user = userData.get({ plain: true });
-      const blogPost = blogPostData.map((post) => post.get({ plain:true }));
+      // const blogPost = blogPostData.map((post) => post.get({ plain:true }));
 
       res.render('profile', {
         ...user,
-        blogPost,
+        // blogPost,
         logged_in: true
       });
     } catch (err) {

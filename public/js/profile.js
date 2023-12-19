@@ -7,7 +7,7 @@
 
 const deletePostHandler = async (event) => {
 
-    alert('You clicked delete post btn');
+    // alert('You clicked delete post btn');
 
     if (event.target.hasAttribute('data-id')) {
         const id = event.target.getAttribute('data-id');
