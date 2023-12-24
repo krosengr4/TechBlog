@@ -6,23 +6,20 @@
   </div>
 
 <div class="new-post">
-    <a href="/newPost">New Post!</a>
+    <a href="/newPost"><button>New Post!</button></a>
   </div>
 </div>
 
 <div class="profile-posts">
   {{#if blogPost.length}}
-  {{log blogPost.length}}
+  {{!-- {{log blogPost.length}} --}}
   <div class="col-md-6">
     <h3>Your Posts:</h3>
 
     {{#each blogPost as |blogPost|}}
-    {{!-- compare logged_on.id to id in the post & only see logged on users posts --}}
-    {{!-- If user.userName === blogPost.user_id --}}
-    {{!-- {{#if (user.userName = blogPost.user_id)}} --}}
     <div class="row mb-2">
       <div class="col-md-8">
-        <a href="/blogPost/{{blogPost.id}}"><h4 class="post-title-link">{{blogPost.name}}</h4></a>
+        <a href="/blogPost/{{blogPost.id}}"><h4>{{blogPost.name}}</h4></a>
       </div>
       <div class="col-md-4">
         <button class="post-list btn-sm btn-danger" data-id="{{blogPost.id}}">Delete</button>
@@ -69,3 +66,7 @@
     </form>
   </div>
 </div> --}}
+
+    {{!-- compare logged_on.id to id in the post & only see logged on users posts --}}
+    {{!-- If user.userName === blogPost.user_id --}}
+    {{!-- {{#if (user.userName = blogPost.user_id)}} --}}

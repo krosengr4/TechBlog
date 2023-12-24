@@ -62,21 +62,21 @@ router.get('/blogPost/:id', async (req, res) => {
         include: [{ model: BlogPost }],
       });
 
-    //   const blogPostData = await BlogPost.findAll({
-    //     include: [
-    //         {
-    //             model: User,
-    //             attributes: ['name'],
-    //         },
-    //     ],
-    // });
+      const blogPostData = await BlogPost.findAll({
+        include: [
+            {
+                model: User,
+                attributes: ['name'],
+            },
+        ],
+    });
 
       const user = userData.get({ plain: true });
-      // const blogPost = blogPostData.map((post) => post.get({ plain:true }));
+      const blogPost = blogPostData.map((post) => post.get({ plain:true }));
 
       res.render('profile', {
         ...user,
-        // blogPost,
+        blogPost,
         logged_in: true
       });
     } catch (err) {
