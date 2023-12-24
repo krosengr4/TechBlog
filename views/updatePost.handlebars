@@ -20,11 +20,12 @@
 </div>
 
 <div class="update-container">
-    <h4>New Title:</h4>
-    <textarea class="post-title">{{name}}</textarea>
+    {{log this.blogPost}}
+    <h4>New Title: {{post.title}}</h4>
+    <textarea class="post-title">{{blogpost.title}}</textarea>
 
-    <h4>New Description</h4>
-    <textarea class="description">{{blogpost.description}}</textarea>
+    <h4>New Description {{description}}</h4>
+    <textarea class="description">{{description}}</textarea>
 </div>
 
 
