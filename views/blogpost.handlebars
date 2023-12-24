@@ -15,10 +15,15 @@
 
 <div class="comments">
   <h3 class="comment-title">Comments: </h3>
+  {{#each blogPost.comment as |comment|}}
+  {{> comment}}
+  {{/each}}
 
   <h3 class="add-comment">Add a comment!</h3>
-    <input class="title-input" type="text" id="post-title" name="post-title" />
-    <button type="submit" class="post-comment">Post comment</button>
+    <form class="new-comment-form">
+      <input class="title-input" type="text" id="comment" name="post-title"></input>
+      <button class="post-comment" id="postComment">Post comment</button>
+    </form>
 </div>
 
 {{!-- Link with stylesheet and script --}}
