@@ -1,8 +1,8 @@
 //! This file contains code to delete and update blogpost
 
 const deletePostHandler = async (event) => {
-    
     // alert('You clicked delete post btn');
+
     if (event.target.hasAttribute('data-id')) {
         const id = event.target.getAttribute('data-id');
         
@@ -14,11 +14,24 @@ const deletePostHandler = async (event) => {
             document.location.replace('/profile');
             alert('You have deleted a post');
         } else {
-            alert('Failed to delete a character');
+            alert('Failed to delete a post');
         }
     };
 };
 
+function hideElements() {
+    const id = target.getAttribute('data-id');
+    const postId = fetch(`/api/blogpost/${id}`);
+    const userId = fetch(`/api/user/${id}`);
+    const deleteBtn = document.querySelector('.delete-btn');
+    const postLink = document.querySelector('.profile-post-name');
+
+    if (postId != userId) {
+        deleteBtn.style.display = 'none';
+        postLink.style.display = 'none';
+    }
+
+};
 
 
 
@@ -27,34 +40,3 @@ const deletePostHandler = async (event) => {
 
 document.querySelector('.profile-posts').addEventListener('click', deletePostHandler);
 // document.querySelector('.newPost-btn').addEventListener('click', newPostHandler);
-
-
-
-
-
-// function hideElements() {
-    // const postLink = document.querySelector('.profile-post-name');
-    // const deleteBtn = document.querySelector('.delete-btn');
-    // const userId = req.session.user_id;
-    // const blogPostData = req.session.blogPost_id
-    
-    // if (userId != blogPostData) {
-        //     postLink.style.display = 'none';
-        //     deleteBtn.style.display = 'none';
-        // }
-        // };
-        
-        
-        
-        // const newPostHandler = async (event) => {
-            //     alert('You clicked new post btn');
-            //     event.preventDefault();
-            
-            //     document.location.replace('/newPost');
-            // };
-
-
-
-
-        
-

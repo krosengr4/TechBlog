@@ -1,7 +1,10 @@
+//! This file contains get routes for landing, new post, update post, blogpost:id, profile, and login pages
+
 const router = require('express').Router();
 const { BlogPost, User } = require('../models');
 const withAuth = require('../utils/withAuth');
 
+// get route for the landing page
 router.get('/', async (req, res) => {
     try {
     // Get all blogpost's and Join them w user data
@@ -23,16 +26,23 @@ router.get('/', async (req, res) => {
     } catch (err) {
         res.status(500).json(err);
     }
-    });
+});
 
-
+// get route for page to make new post
 router.get('/newPost', (req, res) => {
   res.render('newPost', {
     logged_in: req.session.logged_in
   })
 });
 
+// get route for page to update post
+router.get('/updatePost', (req, res) => {
+  res.render('updatePost', {
+    logged_in: req.session.logged_in
+  })
+});
 
+// get route to show specific blogpost
 router.get('/blogPost/:id', async (req, res) => {
     try {
       const blogPostData = await BlogPost.findByPk(req.params.id, {
@@ -53,24 +63,25 @@ router.get('/blogPost/:id', async (req, res) => {
         } catch (err) {
           res.status(500).json(err);
         }
-      });
+});
 
-  router.get('/profile', withAuth, async (req, res) => {
-    try {
-      const userData = await User.findByPk(req.session.user_id, {
-        attributes: {exclude: ['password']},
-        include: [{ model: BlogPost }],
-      });
+// route to get profile page
+router.get('/profile', withAuth, async (req, res) => {
+try {
+  const userData = await User.findByPk(req.session.user_id, {
+    attributes: {exclude: ['password']},
+    include: [{ model: BlogPost }],
+  });
 
-      const blogPostData = await BlogPost.findAll({
-        include: [
-            {
-              user_id: req.session.user_id,
-                model: User,
-                attributes: ['name'],
-            },
-        ],
-    });
+  const blogPostData = await BlogPost.findAll({
+    include: [
+        {
+          user_id: req.session.user_id,
+            model: User,
+            attributes: ['name'],
+        },
+    ],
+});
 
       const user = userData.get({ plain: true });
       const blogPost = blogPostData.map((post) => post.get({ plain:true }));
@@ -85,15 +96,16 @@ router.get('/blogPost/:id', async (req, res) => {
     }
   });
 
-  router.get('/login', (req, res) => {
-    if (req.session.logged_in) {
-      res.redirect('/profile');
-      return; 
-    }
-    console.log('You clicked the login page');
+// route to get login page
+router.get('/login', (req, res) => {
+  if (req.session.logged_in) {
+    res.redirect('/profile');
+    return; 
+  }
+  console.log('You clicked the login page');
 
-    res.render('login');
-  });
+  res.render('login');
+});
 
-  module.exports = router;
+module.exports = router;
 

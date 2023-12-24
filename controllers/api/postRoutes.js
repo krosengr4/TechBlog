@@ -1,7 +1,10 @@
+//! This file contains routes to delete, update, and create a blog post
+
 const router = require('express').Router();
 const { BlogPost } = require('../../models');
 const withAuth = require('../../utils/withAuth');
 
+// post route to create a new post
 router.post('/', withAuth, async (req,res) => {
     try {
         const newBlogPost = await BlogPost.create({
@@ -16,7 +19,7 @@ router.post('/', withAuth, async (req,res) => {
     }   
 });
 
-// Delete a post
+// Delete route to delete blog post
 router.delete('/:id', withAuth, async (req, res) => {
     try {
       const postData = await BlogPost.destroy({
@@ -34,14 +37,14 @@ router.delete('/:id', withAuth, async (req, res) => {
       res.status(200).json(postData);
     } catch (err) {
       res.status(500).json(err);
-    }
-  });
+  }
+});
 
-  // Update a post
-  router.put('/:id', withAuth, async (req, res) => {
-    BlogPost.update(req.body, {
-      where: { product_id: req.params.id }
-    })
+// Update a post
+router.put('/:id', withAuth, async (req, res) => {
+  BlogPost.update(req.body, {
+    where: { product_id: req.params.id }
   })
+});
 
   module.exports = router;
