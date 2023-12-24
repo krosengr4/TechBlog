@@ -15,7 +15,7 @@ const deletePostHandler = async (event) => {
             document.location.replace('/profile');
             alert('You have deleted a post');
         } else {
-            alert('Failed to delete a post');
+            alert('Failed to delete. This is not your post!');
         }
     };
 };
