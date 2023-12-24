@@ -27,13 +27,27 @@ h2 {
     /* display: none; */
 }
 
+.created-by {
+    font-size: 18px;
+    text-decoration: overline underline;
+    position: relative;
+    bottom: 28px;
+}
+
 .delete-btn {
     font-size: 18px;
     color: rgb(0, 0, 0);
     background-color: rgb(216, 17, 17);
     /* display: none; */
+    position: relative;
+    bottom: 45px;
 }
 
 .your-posts {
     font-size: 50px;
+}
+
+.post-container {
+    position: relative;
+    bottom: 30px;
 }
