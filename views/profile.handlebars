@@ -6,7 +6,7 @@
   </div>
 
 <div class="new-post">
-    <a href="/newPost"><button>New Post!</button></a>
+    <a href="/newPost"><button class="newPost-btn">New Post!</button></a>
   </div>
 </div>
 
@@ -14,18 +14,15 @@
   {{#if blogPost.length}}
   {{!-- {{log blogPost.length}} --}}
   <div class="col-md-6">
-    <h3>Your Posts:</h3>
+    <h3 class="your-posts">Your Posts:</h3>
 
     {{#each blogPost as |blogPost|}}
     <div class="row mb-2">
       <div class="col-md-8">
-        <a href="/blogPost/{{blogPost.id}}"><h4>{{blogPost.name}}</h4></a>
+        <a href="/blogPost/{{blogPost.id}}"><h4 class="profile-post-name">{{blogPost.name}}</h4></a>
       </div>
       <div class="col-md-4">
-        <button class="post-list btn-sm btn-danger" data-id="{{blogPost.id}}">Delete</button>
-      </div>
-      <div>
-        <button class="update-btn" data-id="{{blogPost.id}}">Update</button>
+        <button class="delete-btn" data-id="{{blogPost.id}}">Delete</button>
       </div>
     </div>
       {{!-- {{/if}} --}}

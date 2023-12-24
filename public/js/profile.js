@@ -30,7 +30,6 @@ document.querySelector('.profile-posts').addEventListener('click', deletePostHan
 
 
 
-
 // const newPostHandler = async (event) => {
 //     alert('You clicked new post btn');
 //     event.preventDefault();

@@ -20,16 +20,14 @@ h2 {
     text-decoration: overline underline;
 }
 
-.like-btn {
+.update-btn {
         padding: 12px;
     color: rgb(22, 83, 36);
     background-color: rgb(29, 29, 81);
     font-size: 18px;
 }
 
-.dislike-btn {
-        padding: 12px;
+.update-btn:hover {
     color: rgb(22, 83, 36);
-    background-color: rgb(29, 29, 81);
-    font-size: 18px;
+    background-color: lightgreen;
 }
