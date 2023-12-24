@@ -83,18 +83,18 @@ try {
     ],
 });
 
-      const user = userData.get({ plain: true });
-      const blogPost = blogPostData.map((post) => post.get({ plain:true }));
+    const user = userData.get({ plain: true });
+    const blogPost = blogPostData.map((post) => post.get({ plain:true }));
 
-      res.render('profile', {
-        ...user,
-        blogPost,
-        logged_in: true
-      });
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  });
+    res.render('profile', {
+      ...user,
+      blogPost,
+      logged_in: true
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 // route to get login page
 router.get('/login', (req, res) => {

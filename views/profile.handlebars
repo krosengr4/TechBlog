@@ -21,7 +21,7 @@
     {{#each blogPost as |blogPost|}}
     <div class="row mb-2">
       <div class="col-md-8">
-        <a href="/blogPost/{{blogPost.id}}"><h4 class="profile-post-name">{{blogPost.name}}</h4></a>
+        <h4 class="profile-post-name"><a href="/blogPost/{{blogPost.id}}">{{blogPost.name}}</a></h4>
       </div>
       <div class="col-md-4">
         <button class="delete-btn" data-id="{{blogPost.id}}">Delete</button>
