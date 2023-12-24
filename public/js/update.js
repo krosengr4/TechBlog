@@ -10,10 +10,10 @@ const updatePostHandler = async (event) => {
 
     const title = titleEl.value;
     const description = descriptionEl.value;
-    
+
     if(title.length && description.length) {
-        const id = event.target.getAttribute('data-id');
-        // const id = document.location.pathname.split("/").at(-1);
+        // const id = event.target.getAttribute('data-id');
+        const id = document.location.pathname.split("/").at(-1);
         const response = await fetch(`/api/blogpost/${id}`, {
             method: 'PUT',
             body: JSON.stringify({ title, description }),
