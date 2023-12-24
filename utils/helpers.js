@@ -1,8 +1,14 @@
 //! This file contains helper function to get the date and generate random amount
 
+// Helper function that formates the date and time
 module.exports = {
-    format_date: (date) => {
-        // format the date as MM/DD/YYYY
-        return date.toLocalDateString();
-    },
+    // format_time: (date) => {
+    //     return date.toLocalTimeString();
+    // },
+    // format_date: (date) => {
+    //     return date.toLocalDate();
+    // },
+    format_datetime: (date) => {
+        return date.toLocalTimeString()+'on'+ date.toLocalDateString();
+    }
 };

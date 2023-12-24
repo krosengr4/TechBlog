@@ -7,12 +7,7 @@
     </div>
   </div>
 
-<div class="new-post">
-    <a href="/newPost"><button class="newPost-btn">New Post!</button></a>
-  </div>
-</div>
-
-<div class="profile-posts">
+    <div class="profile-posts">
   {{#if blogPost.length}}
   {{!-- {{log blogPost.length}} --}}
   <div class="col-md-6">
@@ -22,24 +17,62 @@
     <div class="row mb-2">
       <div class="col-md-8">
         <h4 class="profile-post-name"><a href="/blogPost/{{blogPost.id}}">{{blogPost.name}}</a></h4>
+        <p class="created-on">Created on {{date_created}}</p>
       </div>
       <div class="col-md-4">
         <button class="delete-btn" data-id="{{blogPost.id}}">Delete</button>
       </div>
-      <div class="update-btn">
-        <a href="/updatePost"><button class="update-btn" data-id="{{blogPost.id}}">Update</button></a>
-      </div>
-    </div>
-      {{!-- {{/if}} --}}
+    </div> 
     {{/each}}
   </div>
   {{/if}}
 </div>
 
+{{!-- {{#if blogPost.length}}
+  {{#each blogPost as |blogPost|}}
+      <div class="card col-11 m-4 p-1">
+        <div class="card-title d-flex justify-content-between p-2 h4">
+            <a href="/blogPost/{{id}}">
+            <h2 class="profile-post-name">{{blogPost.name}}</h2>
+            </a>
+        </div>
+        <div class="card-body">{{blogPost.description}}</div>
+    </div>
+    {{/each}}
+{{else}}
+    <div class="card col-11 m-4 p-1">
+        <div class="card-title d-flex justify-content-between p-2 h4">
+            <p class="h2 text-dark">There are no posts</p>
+        </div>
+        <div class="card-body"></div>
+    </div>
+{{/if}} --}}
+
+
 
 {{!-- Link with stylesheet and script --}}
 <script src="./js/profile.js"></script>
 <link rel="stylesheet" href="/css/profile.css">
+
+
+
+
+
+
+
+
+
+
+
+<div class="new-post">
+    <a href="/newPost"><button class="newPost-btn">New Post!</button></a>
+  </div>
+</div>
+
+
+
+
+
 
 
 
