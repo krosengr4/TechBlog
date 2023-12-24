@@ -1,7 +1,8 @@
 {{!-- ! This file contains html for the update post page --}}
 
-<div>
+<div id="coming-soon">
     <h1> Function to update your previous posts is coming soon!</h1>
+    {{!-- <p>Check back soon</p>
     <p>Check back soon</p>
     <p>Check back soon</p>
     <p>Check back soon</p>
@@ -15,10 +16,22 @@
     <p>Check back soon</p>
     <p>Check back soon</p>
     <p>Check back soon</p>
-    <p>Check back soon</p>
-    <p>Check back soon</p>
+    <p>Check back soon</p> --}}
 </div>
 
+<div class="update-container">
+    <h4>New Title:</h4>
+    <textarea class="post-title">{{name}}</textarea>
+
+    <h4>New Description</h4>
+    <textarea class="description">{{blogpost.description}}</textarea>
+</div>
+
+
+<div class="buttons">
+    <button class="update-btn">Update and Post!</button>
+    <button class="cancel-btn">Cancel</button>
+</div>
 
 <script src="./js/update.js"></script>
 <link rel="stylesheet" href="/css/update.css">
