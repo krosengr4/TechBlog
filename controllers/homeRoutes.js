@@ -65,6 +65,7 @@ router.get('/blogPost/:id', async (req, res) => {
       const blogPostData = await BlogPost.findAll({
         include: [
             {
+              user_id: req.session.user_id,
                 model: User,
                 attributes: ['name'],
             },

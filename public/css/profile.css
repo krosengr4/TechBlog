@@ -24,12 +24,14 @@ h2 {
 
 .profile-post-name {
     font-size: 32px;
+    /* display: none; */
 }
 
 .delete-btn {
     font-size: 18px;
     color: rgb(0, 0, 0);
     background-color: rgb(216, 17, 17);
+    /* display: none; */
 }
 
 .your-posts {
