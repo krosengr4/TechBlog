@@ -1,3 +1,5 @@
+//! This file brings all the code together and handles the server
+
 const path = require('path');
 const routes = require ('./controllers');
 const express = require('express');

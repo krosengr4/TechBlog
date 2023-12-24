@@ -1,13 +1,11 @@
+//! This file contains code to create a new blogpost
+
+// Function to create to post when new post btn clicked
 const newPostHandler = async (event) => {
     // alert('You clicked the button for new post');
     
     const blogTitle = document.querySelector('#post-title').value.trim();
     const blogDescription = document.querySelector('#post-desc').value.trim();
-
-    // alert(blogTitle);
-    // console.log(blogTitle);
-    // alert(blogDescription);
-    // console.log(blogDescription); 
    
     if (blogTitle && blogDescription) {
     // Send a POST request to the API endpoint

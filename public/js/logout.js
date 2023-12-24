@@ -1,3 +1,6 @@
+//! This file contains code for user to logout
+
+// Function for user to logout when logout button clicked
 const logout = async () => {
     console.log('You clicked logout');
     const response = await fetch('/api/users/logout', {

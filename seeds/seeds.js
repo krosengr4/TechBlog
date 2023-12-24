@@ -1,3 +1,5 @@
+//! This file contains code to import the seeds from userData.json and blogPostData.json
+
 const sequelize = require('../config/connection');
 const { User, BlogPost } = require('../models');
 

@@ -1,13 +1,11 @@
+//! This page contains code to handle loging in and signing up 
+
+// Function for login button for returning user to login on /login page
 const loginFormHandler = async (event) => {
     event.preventDefault();
     
     const userName = document.querySelector('#user-login').value.trim();
     const password = document.querySelector('#password-login').value.trim();
-
-    // alert(userName);
-    // alert(password);
-    // let x = JSON.stringify({ userName, password });
-    // alert(x);
 
     if (userName && password) {
         const response = await fetch('/api/users/login', {
@@ -24,6 +22,7 @@ const loginFormHandler = async (event) => {
     }
 };
 
+// Function for signup button for new user to signup on /login page
 const signupFormHandler = async (event) => {
     event.preventDefault();
 
@@ -53,6 +52,6 @@ const signupFormHandler = async (event) => {
 
 };
 
-
+// event listeners for login and signup buttons
 document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
 document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);

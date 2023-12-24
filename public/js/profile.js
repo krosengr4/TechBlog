@@ -1,5 +1,6 @@
 //! This file contains code to delete and update blogpost
 
+// Function to delete a post when delete btn is clicked
 const deletePostHandler = async (event) => {
     // alert('You clicked delete post btn');
 
@@ -19,23 +20,19 @@ const deletePostHandler = async (event) => {
     };
 };
 
-function hideElements() {
-    const id = target.getAttribute('data-id');
-    const postId = fetch(`/api/blogpost/${id}`);
-    const userId = fetch(`/api/user/${id}`);
-    const deleteBtn = document.querySelector('.delete-btn');
-    const postLink = document.querySelector('.profile-post-name');
+// function hideElements() {
+//     const id = target.getAttribute('data-id');
+//     const postId = fetch(`/api/blogpost/${id}`);
+//     const userId = fetch(`/api/user/${id}`);
+//     const deleteBtn = document.querySelector('.delete-btn');
+//     const postLink = document.querySelector('.profile-post-name');
 
-    if (postId != userId) {
-        deleteBtn.style.display = 'none';
-        postLink.style.display = 'none';
-    }
+//     if (postId != userId) {
+//         deleteBtn.style.display = 'none';
+//         postLink.style.display = 'none';
+//     }
 
-};
-
-
-
-
+// };
 
 
 document.querySelector('.profile-posts').addEventListener('click', deletePostHandler);
