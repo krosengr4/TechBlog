@@ -32,7 +32,7 @@ const updatePostHandler = async (event) => {
 const cancelUpdateHandler = async(event) => {
     event.preventDefault();
     document.location.replace('/profile');
-}
+};
 
 document.querySelector('.cancel-btn').addEventListener('click', cancelUpdateHandler);
 document.querySelector('.update-btn').addEventListener('click', updatePostHandler);

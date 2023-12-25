@@ -7,7 +7,7 @@
     </div>
   </div>
 
-    <div class="profile-posts">
+  <div class="profile-posts">
   {{#if blogPost.length}}
   {{!-- {{log blogPost.length}} --}}
   <div class="col-md-6">
@@ -17,8 +17,8 @@
     <div class="post-container">
       <div class="col-md-8">
         <h4 class="profile-post-name"><a href="/blogPost/{{blogPost.id}}">{{blogPost.name}}</a></h4>
-        <p class="created-by">Created by: {{user.name}} </p>
-        {{!-- <p class="created-on">Created on {{date_created}}</p> --}}
+        {{!-- <p class="created-by">Created by: {{user.name}} </p> --}}
+        <p class="created-by">Created on: {{date_created}}</p>
       </div>
       <div class="col-md-4">
         <button class="delete-btn" data-id="{{blogPost.id}}">Delete</button>

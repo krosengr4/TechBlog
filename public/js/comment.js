@@ -4,17 +4,17 @@
 
 // const commentTextEl = document.querySelector('#comment');
 
-newCommentHandler = async (event) => {
-    event.preventDefault();
+const newCommentHandler = async (event) => {
+    // event.preventDefault();
     alert('u click post');
 
     const content = document.querySelector('#comment').value.trim();
 
     if ( content ) {
-        // const post_id = document.location.pathname.split("/")[2];
-        const response = await fetch("/api/comment/", {
+        // const blogPost_id = document.location.pathname.split("/")[2];
+        const response = await fetch("/api/comment", {
             method: "POST",
-            body: JSON.stringify({ content }),
+            body: JSON.stringify({ content, blogPost_id }),
             headers: { "Content-Type": "application/json" },
         });
         if (response.ok) {
