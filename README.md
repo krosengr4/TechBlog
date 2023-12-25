@@ -40,6 +40,9 @@ After cloning the repository code:
 ## Images
 ![image of toaster post site](/assets/image.png)
 
+# Walk Through Video
+[Click here for a walk through of Toaster Post!](https://drive.google.com/file/d/19cxo9_nhY4h0yjT3rrjm3xc8DCXM36iB/view)
+
 ## Contributing
 
 ### Please contribute to this project:
