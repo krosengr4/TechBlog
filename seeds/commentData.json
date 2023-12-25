@@ -2,6 +2,11 @@
     {
         "content": "This is a really good post!",
         "user_id": "1",
-        "blogPost_id": "3"
+        "blogPost_id": "4"
+    },
+    {
+        "content": "This is a comment",
+        "user_id": "2",
+        "blogPost_id": "4"
     }
 ]
