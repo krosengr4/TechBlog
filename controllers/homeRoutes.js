@@ -61,14 +61,11 @@ router.get('/blogPost/:id', async (req, res) => {
               attributes: ['name']
             }
           },
-          // {
-          //   model: BlogPost,
-          //   attributes: ["name", "description", "date_created"]
-          // },
         ],
       });
 
       console.log(blogPostData);
+
       if(blogPostData) {
         const blogPost = blogPostData.get({ plain: true });
         res.render("blogpost", {
