@@ -16,7 +16,8 @@ router.post("/", async (req, res) => {
         res.status(200).json(newComment);
         // console.log(newComment);
         console.log('new comment = ', newComment);
-        res.redirect(`/blogPost/${req.params.id}`)
+        res.redirect(`/`);
+        // res.redirect(`/blogPost/${req.params.id}`);
     } catch (err) {
         res.status(400).json(err);
         console.log('Could not make a new comment');
