@@ -5,22 +5,22 @@
     <h1> *NOT WORKING YET*</h1>
 </div>
 
-{{#each blogPost as |blogPost|}}
+{{!-- {{#each blogPost as |blogPost|}} --}}
 <div class="update-container">
     {{log this.blogPost}}
     
-    <h4>Post Title: {{blogPost.title}}</h4>
+    <h4>New Post Title: </h4>
     <input class="title-input" type="text" id="comment" name="post-title"></input>
 
     {{!-- <textarea class="post-title">{{blogpost.title}}</textarea> --}}
 
-    <h4>Post Description {{description}}</h4>
+    <h4>New Post Description</h4>
     {{!-- <textarea class="description">{{description}}</textarea> --}}
     <input class="title-input" type="text" id="comment" name="post-title"></input>
     <button class="update-btn">Update and Post!</button>
     <button class="cancel-btn">Cancel</button>
 </div>
-{{/each}}
+{{!-- {{/each}} --}}
 
 
 

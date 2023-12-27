@@ -10,18 +10,6 @@ h2 {
     font-size: 34px;
 }
 
-.newPost-btn {
-    padding: 16px;
-    color: rgb(49, 119, 65);
-    background-color: rgb(29, 29, 81);
-    font-size: 20px;
-}
-
-.newPost-btn:hover {
-    color: rgb(22, 83, 36);
-    background-color: lightgreen;
-}
-
 .profile-post-name {
     font-size: 32px;
     /* display: none; */
@@ -34,6 +22,17 @@ h2 {
     bottom: 28px;
 }
 
+.newPost-btn {
+    padding: 16px;
+    color: rgb(49, 119, 65);
+    background-color: rgb(29, 29, 81);
+    font-size: 20px;
+}
+.newPost-btn:hover {
+    color: rgb(22, 83, 36);
+    background-color: lightgreen;
+}
+
 .delete-btn {
     font-size: 18px;
     color: rgb(0, 0, 0);
@@ -41,6 +40,22 @@ h2 {
     /* display: none; */
     position: relative;
     bottom: 45px;
+}
+.delete-btn:hover {
+    color: rgb(22, 83, 36);
+    background-color: lightgreen;
+}
+
+.edit-btn {
+    font-size: 18px;    
+    color: rgb(49, 119, 65);
+    background-color: rgb(29, 29, 81);
+    position: relative;
+    bottom: 45px;
+}
+.edit-btn:hover {
+    color: rgb(22, 83, 36);
+    background-color: lightgreen;
 }
 
 .your-posts {
@@ -50,4 +65,11 @@ h2 {
 .post-container {
     position: relative;
     bottom: 30px;
+}
+
+.new-blog-form,
+.edit-blog-form {
+    display: none;
+    /* width: 50%; */
+    /* margin: 0px auto; */
 }

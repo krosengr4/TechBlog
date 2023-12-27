@@ -70,10 +70,32 @@ router.get('/newPost', (req, res) => {
 
 // get route for page to update post
 //! Make this get route link to a blog id
-router.get('/updatePost/:id    ', (req, res) => {                            //! WORK ON THIS RIGHT NOW!
-  res.render('updatePost', {
-    logged_in: req.session.logged_in
-  })
+router.get('/updatePost', async (req, res) => {
+
+  // try {
+  //   const blogPostData = await BlogPost.findByPk(req.params.id, {
+  //     where: { user_id: req.session.user_id },
+  //     attributes: ["id", "name", "description", "date_created"],
+  //   })
+
+  //   if(blogPostData) {
+  //     const blogPost = blogPostData.get({ plain: true });
+
+      res.render('updatePost', {
+        // blogPost,
+        logged_in: req.session.logged_in
+      });
+
+      
+  //   } else {
+  //     res.status(400).json({ message: "No posts found with this id" });
+  //   }
+  // } catch (err) {
+  //   console.log(err);
+  //   res.status(500).json(err);
+  // }
+
+
 });
 
 // Get comments route

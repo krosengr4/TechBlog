@@ -1,48 +1,22 @@
-//! This file contains code that handles the blogpost viewing page
-
-const updatePostHandler = async (event) => {
-    event.preventDefault();
-    alert('You clicked Update and Post button');
-
-    //query our elements
-    // const titleVal = document.querySelector('.post-title').value.trim();
-    // const descriptionVal = document.querySelector('.main-desc').value.trim();
-
-    // const titleVal = document.querySelector('#title').value.trim();
-    // const descriptionVal = document.querySelector('#description').value.trim();
+//! This file contains absolutely nothing anymore :(
 
 
-    
-    
-    // alert(titleVal);
-    // alert(descriptionVal);
 
-        if (event.target.hasAttribute('data-id')) {
-            const id = event.target.getAttribute('data-id');
-            
-            const response = await fetch(`/api/blogpost/${id}`, {
-                method: 'PUT',
-                body: JSON.stringify({ name: titleVal, description: descriptionVal }),
-                headers: { "Content-Type": "application/json" } 
-            });
-            
-            if (response.ok) {
-                alert('Your post has been updated.');
-                document.location.replace('/profile');
-            } else {
-                alert(`|FAILED TO UPDATE| This is not your post!`);
-            }
-        };
-}
 
-const cancelUpdateHandler = async(event) => {
-    event.preventDefault();
-    document.location.replace('/profile');
-};
 
-document.querySelector('.cancel-btn').addEventListener('click', cancelUpdateHandler);
-document.querySelector('.update-btn').addEventListener('click', updatePostHandler);
-document.querySelector('.profile-posts').addEventListener('click', deletePostHandler);
+// Handler for the cancel button (after edit btn clicked).
+// const cancelUpdateHandler = async(event) => {
+    // event.preventDefault();
+    // document.location.replace('/profile');
+// };
+
+// document.querySelector('.cancel-btn').addEventListener('click', cancelUpdateHandler);
+
+// document.querySelector('.update-btn').addEventListener('click', updatePostHandler);
+
+// document.querySelectorAll('.edit-btn').addEventListener('click', updatePostHandler);
+
+// document.querySelector('.profile-posts').addEventListener('click', deletePostHandler);
 
 
 

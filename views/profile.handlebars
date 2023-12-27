@@ -10,49 +10,44 @@
     <a href="/newPost"><button class="newPost-btn">New Post!</button></a>
   </div>
 
-  <div class="profile-posts">
-  {{#if blogPost.length}}
-  {{!-- {{log blogPost.length}} --}}
-  <div class="col-md-6">
-    <h3 class="your-posts">Your Posts:</h3>
+<form class="edit-blog-form" data-id="{{blogPost.id}}">
+  <div class="card border-dark mb-3">
+      <header class="card-header bg-dark">
+          <h3 class="card-title">Edit Blog</h3>
+      </header>
+      <div class="card-body">
+            <div class="mb-3">
+              <label class="form-label">New Title</label>
+              <input class="form-control" type="text" id="new-title" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">New Description</label>
+              <input class="form-control" type="text" id="new-description" required>
+              <button type="submit" class="update-btn">Update and save</button>
+              <button class="cancel-btn">Cancel</button>
+            </div>
+        </div>    
+    </div>
+</form>
 
-    {{#each blogPost as |blogPost|}}
-    <div class="post-container">
-      <div class="col-md-8">
-        <h4 class="profile-post-name"><a href="/blogPost/{{blogPost.id}}">{{blogPost.name}}</a></h4>
-        {{!-- <p class="created-by">Created by: {{user.name}} </p> --}}
-        <p class="created-by">Created on: {{date_created}}</p>
-      </div>
-      <div class="col-md-4">
-        <button class="delete-btn" data-id="{{blogPost.id}}">Delete</button>
-      </div>
-    </div> 
-    {{/each}}
-  </div>
-  {{/if}}
+<div class="profile-posts">
+    {{#if blogPost.length}}
+        {{#each blogPost as |blogPost|}}
+        <section class="post-section">
+            <div>
+                <h4 class="profile-post-name"><a href="/blogPost/{{blogPost.id}}">{{blogPost.name}}</a></h4>
+                <p class="created-by">Created on: {{date_created}}</p>
+                {{!-- <p class="created-by">Created by: {{user.name}} </p> --}}
+            </div>
+
+            <div>
+              <button class="edit-btn" data-id="{{blogPost.id}}">Edit</button>
+              <button class="delete-btn" data-id="{{blogPost.id}}">Delete</button>
+            </div>
+        </section>
+        {{/each}}
+    {{/if}}
 </div>
-
-{{!-- {{#if blogPost.length}}
-  {{#each blogPost as |blogPost|}}
-      <div class="card col-11 m-4 p-1">
-        <div class="card-title d-flex justify-content-between p-2 h4">
-            <a href="/blogPost/{{id}}">
-            <h2 class="profile-post-name">{{blogPost.name}}</h2>
-            </a>
-        </div>
-        <div class="card-body">{{blogPost.description}}</div>
-    </div>
-    {{/each}}
-{{else}}
-    <div class="card col-11 m-4 p-1">
-        <div class="card-title d-flex justify-content-between p-2 h4">
-            <p class="h2 text-dark">There are no posts</p>
-        </div>
-        <div class="card-body"></div>
-    </div>
-{{/if}} --}}
-
-
 
 {{!-- Link with stylesheet and script --}}
 <script src="./js/profile.js"></script>

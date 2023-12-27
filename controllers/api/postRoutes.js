@@ -41,13 +41,13 @@ router.delete('/:id', withAuth, async (req, res) => {
 });
 
 // Update a post
-router.put('/post/:id', withAuth, async (req, res) => {
+router.put('/blogPost/:id', withAuth, async (req, res) => {
   try {
     const blogPostData = await BlogPost.update(
       {
         // id: req.params.id,
         // user_id: req.session.user_id,
-        title: req.body.title,
+        name: req.body.name,
         description: req.body.description,
       },
       { 
