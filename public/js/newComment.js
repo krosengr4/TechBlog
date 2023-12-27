@@ -12,21 +12,31 @@ const newCommentHandler = async (event) => {
 
 
     alert(commentContent);
+    // alert(commentContent.length);
 
-    if ( commentContent.length > 0 ) {
-        const postId = req.body.params;
 
-        alert(postId);
+    // if (commentContent.length === 14) {
+    //     alert(commentContent);
+    // }
+
+    
+    if (commentContent.length > 0) {
+        alert(commentContent.length);
+        
+        // const postId = req.body.params;
         // const postId = document.location.pathname.split("/")[2];
+
+
+        // alert(req.body.params);
         
         const response = await fetch("/api/comment", {
             method: "POST",
-            body: JSON.stringify({ content: commentContent, blogPost_id: postId }),
-            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ content: commentContent, blogPost_id: 1 }), //! FIX THIS
+            headers: { 'Content-Type': 'application/json' },            
         });
         if (response.ok) {
-            document.location.replace(`/profile`);
-            // document.location.replace(`/blogPost/${req.params.id}`);
+            // document.location.replace(`/profile`);
+            document.location.replace(`/blogPost/${req.params.id}`);
         } else {
             alert("Comment could not be saved to the post");
         }
@@ -35,3 +45,6 @@ const newCommentHandler = async (event) => {
 
 // document.querySelector("#postComment").addEventListener("submit", newCommentHandler);
 document.querySelector('.new-comment-form').addEventListener('submit', newCommentHandler);
+
+
+//Executing (default): INSERT INTO `blogPost` (`id`,`name`,`description`,`date_created`,`user_id`) VALUES (DEFAULT,?,?,?,?);
