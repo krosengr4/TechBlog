@@ -2,30 +2,38 @@
 
 const updatePostHandler = async (event) => {
     event.preventDefault();
-    // alert('You clicked update');
+    alert('You clicked Update and Post button');
 
     //query our elements
-    const title = document.querySelector('.post-title').value.trim();
-    const description = document.querySelector('.main-desc').value.trim();
+    // const titleVal = document.querySelector('.post-title').value.trim();
+    // const descriptionVal = document.querySelector('.main-desc').value.trim();
 
-    const id = event.target.getAttribute('data-id');
+    // const titleVal = document.querySelector('#title').value.trim();
+    // const descriptionVal = document.querySelector('#description').value.trim();
 
-    if(title && description) {
-        // const id = document.location.pathname.split("/").at(-1);
-        const response = await fetch(`/api/blogPost/${id}`, {
-            method: 'PUT',
-            body: JSON.stringify({ title, description }),
-            headers: { "Content-Type": "application/json" },
-        });
 
-        if(response.ok) {
-            document.location.replace('/profile');
-            alert('Post successfully updated');
-        } else {
-            alert("Failed to update your post.")
+    
+    
+    // alert(titleVal);
+    // alert(descriptionVal);
+
+        if (event.target.hasAttribute('data-id')) {
+            const id = event.target.getAttribute('data-id');
+            
+            const response = await fetch(`/api/blogpost/${id}`, {
+                method: 'PUT',
+                body: JSON.stringify({ name: titleVal, description: descriptionVal }),
+                headers: { "Content-Type": "application/json" } 
+            });
+            
+            if (response.ok) {
+                alert('Your post has been updated.');
+                document.location.replace('/profile');
+            } else {
+                alert(`|FAILED TO UPDATE| This is not your post!`);
+            }
         };
-    };
-};
+}
 
 const cancelUpdateHandler = async(event) => {
     event.preventDefault();
@@ -34,3 +42,41 @@ const cancelUpdateHandler = async(event) => {
 
 document.querySelector('.cancel-btn').addEventListener('click', cancelUpdateHandler);
 document.querySelector('.update-btn').addEventListener('click', updatePostHandler);
+document.querySelector('.profile-posts').addEventListener('click', deletePostHandler);
+
+
+
+
+
+
+
+// const updatePostHandler = async (event) => {
+//     // event.preventDefault();
+
+//     alert('You clicked Update and Post button');
+
+//     //query our elements
+//     const titleVal = document.querySelector('.post-title').value.trim();
+//     const descriptionVal = document.querySelector('.main-desc').value.trim();
+
+//     alert(titleVal);
+//     alert(descriptionVal);
+    
+//     const id = event.target.getAttribute('data-id');
+
+//     if(titleVal && descriptionVal) {
+//         // const id = document.location.pathname.split("/").at(-1);
+//         const response = await fetch(`/api/blogPost/${id}`, {
+//             method: 'PUT',
+//             body: JSON.stringify({ titleVal, descriptionVal }),
+//             headers: { "Content-Type": "application/json" },
+//         });
+
+//         if(response.ok) {
+//             document.location.replace('/profile');
+//             alert('Post successfully updated');
+//         } else {
+//             alert("Failed to update your post.")
+//         };
+//     };
+// };

@@ -5,21 +5,24 @@
     <h1> *NOT WORKING YET*</h1>
 </div>
 
+{{#each blogPost as |blogPost|}}
 <div class="update-container">
     {{log this.blogPost}}
     
-    <h4>New Title: {{post.title}}</h4>
-    <textarea class="post-title">{{blogpost.title}}</textarea>
+    <h4>Post Title: {{blogPost.title}}</h4>
+    <input class="title-input" type="text" id="comment" name="post-title"></input>
 
-    <h4>New Description {{description}}</h4>
-    <textarea class="description">{{description}}</textarea>
-</div>
+    {{!-- <textarea class="post-title">{{blogpost.title}}</textarea> --}}
 
-
-<div class="buttons">
+    <h4>Post Description {{description}}</h4>
+    {{!-- <textarea class="description">{{description}}</textarea> --}}
+    <input class="title-input" type="text" id="comment" name="post-title"></input>
     <button class="update-btn">Update and Post!</button>
     <button class="cancel-btn">Cancel</button>
 </div>
+{{/each}}
+
+
 
 <script src="./js/update.js"></script>
 <link rel="stylesheet" href="/css/update.css">

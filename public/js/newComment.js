@@ -6,22 +6,15 @@
 
 const newCommentHandler = async (event) => {
     // event.preventDefault();
-    alert('u click post comment');
+    // alert('u click post comment');
 
     const commentContent = document.querySelector('#comment').value.trim();
 
-
-    alert(commentContent);
+    // alert(commentContent);
     // alert(commentContent.length);
-
-
-    // if (commentContent.length === 14) {
-    //     alert(commentContent);
-    // }
-
     
-    if (commentContent.length > 0) {
-        alert(commentContent.length);
+    if (commentContent) {
+        // alert(commentContent.length);
         
         // const postId = req.body.params;
         // const postId = document.location.pathname.split("/")[2];
