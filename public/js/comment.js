@@ -6,19 +6,27 @@
 
 const newCommentHandler = async (event) => {
     // event.preventDefault();
-    alert('u click post');
+    alert('u click post comment');
 
-    const content = document.querySelector('#comment').value.trim();
+    const commentContent = document.querySelector('#comment').value.trim();
 
-    if ( content ) {
-        // const blogPost_id = document.location.pathname.split("/")[2];
+
+    alert(commentContent);
+
+    if ( commentContent.length > 0 ) {
+        const postId = req.body.params;
+
+        alert(postId);
+        // const postId = document.location.pathname.split("/")[2];
+        
         const response = await fetch("/api/comment", {
             method: "POST",
-            body: JSON.stringify({ content, blogPost_id }),
+            body: JSON.stringify({ content: commentContent, blogPost_id: postId }),
             headers: { "Content-Type": "application/json" },
         });
         if (response.ok) {
-            document.location.replace('/');
+            document.location.replace(`/profile`);
+            // document.location.replace(`/blogPost/${req.params.id}`);
         } else {
             alert("Comment could not be saved to the post");
         }

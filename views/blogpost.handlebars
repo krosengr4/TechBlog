@@ -16,12 +16,22 @@
 
 <div class="comments">
   <h3 class="comment-title">Comments: </h3>
-  <h3>{{comment}}</h3>
-  {{log this}}
+  {{!-- <h3>{{comment}}</h3> --}}
 
-  {{#each blogPost.comments as |comment|}}
+  {{!-- {{#each blogPost.comments as |comment|}}
   <p>{{ comment}}</p>
-  {{/each}}
+  {{/each}} --}}
+
+{{#each comment as |comment|}}
+<section class="comment">
+    <header class="card-header bg-dark comment-header">
+    </header>
+    <div class="mb-3 p-3">
+        <p>{{comment.content}}</p>
+        {{!-- <span class="text-dark">-{{comment.user.username}} {{format_date comment.date_created}}</span> --}}
+    </div>
+</section>
+{{/each}}
 
   <h3 class="add-comment">Add a Comment!</h3>
     <form class="new-comment-form">

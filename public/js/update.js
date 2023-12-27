@@ -1,20 +1,18 @@
 //! This file contains code that handles the blogpost viewing page
 
-//query our elements
-const titleEl = document.querySelector('.post-title');
-const descriptionEl = document.querySelector('.main-desc');
-
 const updatePostHandler = async (event) => {
     event.preventDefault();
     // alert('You clicked update');
 
-    const title = titleEl.value;
-    const description = descriptionEl.value;
+    //query our elements
+    const title = document.querySelector('.post-title').value.trim();
+    const description = document.querySelector('.main-desc').value.trim();
 
-    if(title.length && description.length) {
-        // const id = event.target.getAttribute('data-id');
-        const id = document.location.pathname.split("/").at(-1);
-        const response = await fetch(`/api/blogpost/${id}`, {
+    const id = event.target.getAttribute('data-id');
+
+    if(title && description) {
+        // const id = document.location.pathname.split("/").at(-1);
+        const response = await fetch(`/api/blogPost/${id}`, {
             method: 'PUT',
             body: JSON.stringify({ title, description }),
             headers: { "Content-Type": "application/json" },
@@ -25,7 +23,7 @@ const updatePostHandler = async (event) => {
             alert('Post successfully updated');
         } else {
             alert("Failed to update your post.")
-        }
+        };
     };
 };
 

@@ -1,7 +1,6 @@
 //! This file contains routes to delete, update, and create a blog post
 
 const router = require('express').Router();
-const { where } = require('sequelize');
 const { BlogPost } = require('../../models');
 const withAuth = require('../../utils/withAuth');
 
@@ -44,29 +43,41 @@ router.delete('/:id', withAuth, async (req, res) => {
 // Update a post
 router.put('/post/:id', withAuth, async (req, res) => {
   try {
-    const postData = await BlogPost.update(
+    const blogPostData = await BlogPost.update(
       {
         // id: req.params.id,
         // user_id: req.session.user_id,
         title: req.body.title,
         description: req.body.description,
       },
-      { where: { id: req.params.id } }
-    );
+      { 
+        where: {
+        id: req.params.id ,
+        user_id: req.session.user_id
+      }
+    });
+    
+    if (!blogPostData) {
+      res.status(404).json({ message: 'No Blog Post found with this id!' });
+      return;
+    };
 
-  //   if (postData) {
-  //     res.status(201).json({ id: req.params.id });
-  // } else {
-  //     res.status(500).json({ message: "There was an error while updating the post" });
-  // }
-
-  if (!postData) {
-    res.status(404).json({ message: 'No Blog Post found with this id!' });
-    return;
-  };
+    res.status(200).json(blogPostData);
   } catch (err) {
     res.status(500).json(err)
   }
 });
 
   module.exports = router;
+
+
+/*{ Was on line 59 
+  //   if (postData) {
+    //     res.status(201).json({ id: req.params.id });
+    // } else {
+    //     res.status(500).json({ message: "There was an error while updating the post" });
+    // }
+} */
+
+
+

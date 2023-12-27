@@ -36,4 +36,3 @@ const deletePostHandler = async (event) => {
 
 
 document.querySelector('.profile-posts').addEventListener('click', deletePostHandler);
-// document.querySelector('.newPost-btn').addEventListener('click', newPostHandler);

@@ -6,6 +6,9 @@ const newPostHandler = async (event) => {
     
     const blogTitle = document.querySelector('#post-title').value.trim();
     const blogDescription = document.querySelector('#post-desc').value.trim();
+
+    console.log('blogName: ', blogTitle);
+    console.log('blogDescription: ', blogDescription);
    
     if (blogTitle && blogDescription) {
     // Send a POST request to the API endpoint

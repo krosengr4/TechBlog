@@ -22,17 +22,19 @@ Comment.init (
             allowNull: false,
             defaultValue: DataTypes.NOW
         },
-        user_id: {
-            type: DataTypes.INTEGER, 
+        blogPost_id: {
+            type:DataTypes.INTEGER,
+            allowNull: false,
             references: {
-                model: 'user',
+                model: 'blogPost',
                 key: 'id',
             },
         },
-        blogPost_id: {
-            type:DataTypes.INTEGER,
+        user_id: {
+            type: DataTypes.INTEGER, 
+            allowNull: false,
             references: {
-                model: 'blogPost',
+                model: 'user',
                 key: 'id',
             },
         },
