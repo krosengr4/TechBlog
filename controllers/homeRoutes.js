@@ -4,7 +4,7 @@ const router = require('express').Router();
 const { Comment, BlogPost, User } = require('../models');
 const withAuth = require('../utils/withAuth');
 
-// get route for the landing page
+// get route for the home page / landing page
 router.get('/', async (req, res) => {
     try {
     // Get all blogpost's and Join them w user data
@@ -66,36 +66,6 @@ router.get('/newPost', (req, res) => {
   res.render('newPost', {
     logged_in: req.session.logged_in
   })
-});
-
-// get route for page to update post
-//! Make this get route link to a blog id
-router.get('/updatePost', async (req, res) => {
-
-  // try {
-  //   const blogPostData = await BlogPost.findByPk(req.params.id, {
-  //     where: { user_id: req.session.user_id },
-  //     attributes: ["id", "name", "description", "date_created"],
-  //   })
-
-  //   if(blogPostData) {
-  //     const blogPost = blogPostData.get({ plain: true });
-
-      res.render('updatePost', {
-        // blogPost,
-        logged_in: req.session.logged_in
-      });
-
-      
-  //   } else {
-  //     res.status(400).json({ message: "No posts found with this id" });
-  //   }
-  // } catch (err) {
-  //   console.log(err);
-  //   res.status(500).json(err);
-  // }
-
-
 });
 
 // Get comments route
@@ -178,6 +148,50 @@ router.get('/login', (req, res) => {
 
 module.exports = router;
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// get route for page to update post
+//! Make this get route link to a blog id
+// router.get('/updatePost', async (req, res) => {
+
+  // try {
+  //   const blogPostData = await BlogPost.findByPk(req.params.id, {
+  //     where: { user_id: req.session.user_id },
+  //     attributes: ["id", "name", "description", "date_created"],
+  //   })
+
+  //   if(blogPostData) {
+  //     const blogPost = blogPostData.get({ plain: true });
+
+      // res.render('updatePost', {
+        // blogPost,
+        // logged_in: req.session.logged_in
+      // });
+
+      
+  //   } else {
+  //     res.status(400).json({ message: "No posts found with this id" });
+  //   }
+  // } catch (err) {
+  //   console.log(err);
+  //   res.status(500).json(err);
+  // }
+// });
 
 
 

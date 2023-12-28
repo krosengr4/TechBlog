@@ -41,12 +41,10 @@ router.delete('/:id', withAuth, async (req, res) => {
 });
 
 // Update a post
-router.put('/blogPost/:id', withAuth, async (req, res) => {
+router.put('/:id', withAuth, async (req, res) => {
   try {
     const blogPostData = await BlogPost.update(
       {
-        // id: req.params.id,
-        // user_id: req.session.user_id,
         name: req.body.name,
         description: req.body.description,
       },
@@ -68,7 +66,7 @@ router.put('/blogPost/:id', withAuth, async (req, res) => {
   }
 });
 
-  module.exports = router;
+module.exports = router;
 
 
 /*{ Was on line 59 

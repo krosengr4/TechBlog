@@ -10,7 +10,7 @@
     <a href="/newPost"><button class="newPost-btn">New Post!</button></a>
   </div>
 
-<form class="edit-blog-form" data-id="{{blogPost.id}}">
+<form class="edit-blog-form" data-id="{{id}}">
   <div class="card border-dark mb-3">
       <header class="card-header bg-dark">
           <h3 class="card-title">Edit Blog</h3>
@@ -23,7 +23,7 @@
             <div class="mb-3">
               <label class="form-label">New Description</label>
               <input class="form-control" type="text" id="new-description" required>
-              <button type="submit" class="update-btn">Update and save</button>
+              <button type="submit" class="update-btn" data-id="{{id}}">Update and save</button>
               <button class="cancel-btn">Cancel</button>
             </div>
         </div>    
@@ -32,17 +32,17 @@
 
 <div class="profile-posts">
     {{#if blogPost.length}}
-        {{#each blogPost as |blogPost|}}
+        {{#each blogPost}}
         <section class="post-section">
             <div>
-                <h4 class="profile-post-name"><a href="/blogPost/{{blogPost.id}}">{{blogPost.name}}</a></h4>
+                <h4 class="profile-post-name"><a href="/blogPost/{{id}}">{{name}}</a></h4>
                 <p class="created-by">Created on: {{date_created}}</p>
                 {{!-- <p class="created-by">Created by: {{user.name}} </p> --}}
             </div>
 
             <div>
-              <button class="edit-btn" data-id="{{blogPost.id}}">Edit</button>
-              <button class="delete-btn" data-id="{{blogPost.id}}">Delete</button>
+              <button class="edit-btn" data-id="{{id}}">Edit</button>
+              <button class="delete-btn" data-id="{{id}}">Delete</button>
             </div>
         </section>
         {{/each}}

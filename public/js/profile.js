@@ -20,7 +20,7 @@ const deletePostHandler = async (event) => {
     };
 };
 
-// Handler for the edit button
+// Handler for the button to render edit-form 
 const renderUpdatePage = async(event) => {
     // event.preventDefault();
     // alert('EDIT POST');
@@ -37,35 +37,44 @@ const renderUpdatePage = async(event) => {
     const editForm = document.querySelector('.edit-blog-form');
     editForm.setAttribute("style", "display: block;");
     editForm.setAttribute("data-id", `${id}`);
+    
+    alert(id);
 };
 
-// Handler for update and post button (after edit btn clicked).
+// Handler for update and post button (after edit-form render).
 const updatePostHandler = async (event) => {
-    // event.preventDefault();
-    alert('You clicked Update and Save button');
+    event.preventDefault();
+    // alert('You clicked Update and Save button');
 
+    const id = event.target.getAttribute('data-id');
+    // const editForm = document.querySelector('.edit-blog-form');
+    // editForm.setAttribute("data-id", `${id}`);
+
+    alert(id);
+    alert(event.target);
     //query our elements
-    const newTitle = document.querySelector('#new-title').value.trim();
-    const newDescription = document.querySelector('#new-description').value.trim();
+    const name = document.querySelector('#new-title').value.trim();
+    const description = document.querySelector('#new-description').value.trim();
 
-    alert(newTitle);
-    // alert(newDescription);
+    // console.log("New blog name = ", name);
+    // console.log("New blog desc = ", description);
 
-        // if (event.target.getAttribute('data-id')) {
-        if (newTitle && newDescription) {
-        
-            const id = event.target.getAttribute('data-id');
-            alert(id);
-            
+    // alert(name);    
+    // alert(description);
+
+        if (name && description) {
+            alert(name);    
+
+            // PUT request to the API endpoint to update
             const response = await fetch(`/api/blogpost/${id}`, {
                 method: 'PUT',
-                body: JSON.stringify({ name: newTitle, description: newDescription }),
+                body: JSON.stringify({ name, description }),
                 headers: { "Content-Type": "application/json" } 
             });
             
             if (response.ok) {
                 alert('Your post has been updated.');
-                document.location.replace('/profile');
+                document.location.replace('/');
             } else {
                 alert(`|FAILED TO UPDATE| This is not your post!`);
             }
