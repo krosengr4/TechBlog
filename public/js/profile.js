@@ -35,23 +35,24 @@ const renderUpdatePage = async(event) => {
     newBlogBtn.setAttribute("style", "display: none;"); 
 
     const editForm = document.querySelector('.edit-blog-form');
+    editForm.setAttribute("style", "display: block;"); 
 
     editForm.setAttribute("data-id", `${id}`);
-    
-    alert(id);
 };
 
 // Handler for update and post button (after edit-form render).
 const updatePostHandler = async (event) => {
-    event.preventDefault();
+    // event.preventDefault();
 
     //query our elements
+    
     const name = document.querySelector('#new-title').value.trim();
     const description = document.querySelector('#new-description').value.trim();
-    const id = event.target.getAttribute('data-id');
 
+    console.log('new update name: ', name)
+    const id = event.target.getAttribute('data-id');
         if (name && description) {
-            alert(name);    
+            // alert(name);    
 
             // PUT request to the API endpoint to update
             const response = await fetch(`/api/blogpost/${id}`, {
@@ -64,7 +65,7 @@ const updatePostHandler = async (event) => {
                 alert('Your post has been updated.');
                 document.location.replace('/');
             } else {
-                alert(`|FAILED TO UPDATE| This is not your post!`);
+                alert(`|FAILED TO UPDATE| `);
             }
         };
 };
@@ -92,9 +93,3 @@ document.querySelector('.cancel-btn').addEventListener('click', cancelUpdateHand
 
 // Update and save button
 document.querySelector('.update-btn').addEventListener('click', updatePostHandler);
-
-
-
-
-// document.querySelectorAll('.edit-btn').addEventListener('click', renderUpdatePage);
-// document.querySelector('.delete-btn').addEventListener('click', deletePostHandler);

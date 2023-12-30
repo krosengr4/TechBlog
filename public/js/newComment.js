@@ -13,13 +13,13 @@ const newCommentHandler = async (event) => {
     
     const editForm = document.querySelector('.new-comment-form');
     editForm.setAttribute("data-id", `${postId}`);
-    alert(postId);
+    // alert(postId);
     
     if (commentContent) {
         
         const response = await fetch(`/api/comment/`, {
             method: "POST",
-            body: JSON.stringify({ content: commentContent, blogPost_id: 1 }), //! FIX THIS
+            body: JSON.stringify({ content: commentContent, blogPost_id: 3 }), //! FIX THIS
             headers: { 'Content-Type': 'application/json' },            
         });
         if (response.ok) {

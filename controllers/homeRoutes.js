@@ -39,13 +39,6 @@ try {
   const blogPostData = await BlogPost.findAll({
     where: { user_id: req.session.user_id },
     attributes: ["id", "name", "description", "date_created"],
-    // include: [
-    //     {
-    //       user_id: req.session.user_id,
-    //         model: User,
-    //         attributes: ['name'],
-    //     },
-    // ],
 });
 
 const user = userData.get({ plain: true });
@@ -74,10 +67,8 @@ router.get('/comments', async (req, res) => {
       // Get ALL Blogs and join with User data
       const commentData = await Comment.findAll();
 
-      console.log("comment data:", commentData);
+      // console.log("comment data:", commentData);
 
-
-      // Pass seralized data and session flag into template
       res.json(commentData);
   } catch (err) {
       res.status(500).json(err);
@@ -86,9 +77,6 @@ router.get('/comments', async (req, res) => {
 
 // get route to show specific blogpost and comments
 router.get('/blogPost/:id', async (req, res) => {
-  // if (req.session.logged_in = false) {
-  //   res.redirect('/login')
-  // } else {
     try {
       const blogPostData = await BlogPost.findByPk(req.params.id, {
         include: [
@@ -147,107 +135,3 @@ router.get('/login', (req, res) => {
 });
 
 module.exports = router;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// get route for page to update post
-//! Make this get route link to a blog id
-// router.get('/updatePost', async (req, res) => {
-
-  // try {
-  //   const blogPostData = await BlogPost.findByPk(req.params.id, {
-  //     where: { user_id: req.session.user_id },
-  //     attributes: ["id", "name", "description", "date_created"],
-  //   })
-
-  //   if(blogPostData) {
-  //     const blogPost = blogPostData.get({ plain: true });
-
-      // res.render('updatePost', {
-        // blogPost,
-        // logged_in: req.session.logged_in
-      // });
-
-      
-  //   } else {
-  //     res.status(400).json({ message: "No posts found with this id" });
-  //   }
-  // } catch (err) {
-  //   console.log(err);
-  //   res.status(500).json(err);
-  // }
-// });
-
-
-
-
-// try {
-//   const blogPostData = await BlogPost.findByPk(req.params.id, {
-//     attributes: ['id', 'name', 'description', 'date_created', 'user_id'],
-//     include: [{ model: Comment }]
-// });
-
-//   const commentData = await Comment.findAll({
-//     where: { blogPost_id: req.params.id }, //! <--- May be req.params.blogPost_id
-//     attributes: ["id", "content", "user_id", "date_created"],
-//     include: [
-//       {
-//         module: User,
-//         attributes: ["name"],
-//       }
-//     ]
-//   })
-  
-// const blogPost = blogPostData.get({ plain: true });
-// const comment = commentData.map((post) => post.get({ plain:true }));
-
-  
-//       res.render('blogpost', {
-//         ...blogPost,
-//           comment,
-//         logged_in: req.session.logged_in
-//       });
-//     } catch (err) {
-//       res.status(500).json(err);
-//     }
-
-
-
-
-
-// router.get('/updatePost/blogPost/:id', async (req, res) => {
-//     try {
-//       const blogPostData = await BlogPost.findByPk(req.params.id, {
-//         include: [
-//           {
-//             model: User,
-//             attributes: ['name'],
-//           },
-//         ],
-// });
-      
-//     const blogPost = blogPostData.get({ plain: true });
-      
-//           res.render('blogpost', {
-//             ...blogPost,
-//             logged_in: req.session.logged_in
-//           });
-//         } catch (err) {
-//           res.status(500).json(err);
-//         }
-// });

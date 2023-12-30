@@ -67,15 +67,3 @@ router.put('/:id', withAuth, async (req, res) => {
 });
 
 module.exports = router;
-
-
-/*{ Was on line 59 
-  //   if (postData) {
-    //     res.status(201).json({ id: req.params.id });
-    // } else {
-    //     res.status(500).json({ message: "There was an error while updating the post" });
-    // }
-} */
-
-
-

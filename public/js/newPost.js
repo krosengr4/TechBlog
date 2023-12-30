@@ -2,7 +2,6 @@
 
 // Function to create to post when new post btn clicked
 const newPostHandler = async (event) => {
-    // alert('You clicked the button for new post');
     
     const blogTitle = document.querySelector('#post-title').value.trim();
     const blogDescription = document.querySelector('#post-desc').value.trim();

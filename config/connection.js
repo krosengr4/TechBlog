@@ -1,3 +1,5 @@
+//! This file contains the configuration to connect to the data base.
+
 const Sequelize = require('sequelize');
 require('dotenv').config();
 
@@ -7,20 +9,15 @@ if (process.env.JAWSDB_URL) {
     sequelize = new Sequelize(process.env.JAWSDB_URL);
 } else {
     sequelize = new Sequelize(
-        // process.env.DB_NAME,
-        // process.env.DB_USER,
-        // process.env.DB_PASSWORD,
-        'techblog_db',
-        'root',
-        '611854kr',
+        process.env.DB_NAME,
+        process.env.DB_USER,
+        process.env.DB_PASSWORD,
         {
-            host: 'localhost', //!<--- "root" or "127.0.0.1" or "localhost"
+            host: 'localhost', //!<--- "127.0.0.1" or "localhost"
             dialect: 'mysql',
             port: 3306
         }
-        
         );
-        // console.log(DB_NAME);
 };
 
 module.exports = sequelize;
