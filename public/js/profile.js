@@ -42,28 +42,28 @@ const renderUpdatePage = async(event) => {
 
 // Handler for update and post button (after edit-form render).
 const updatePostHandler = async (event) => {
-    // event.preventDefault();
+    event.preventDefault();
 
     //query our elements
     
     const name = document.querySelector('#new-title').value.trim();
     const description = document.querySelector('#new-description').value.trim();
-
-    console.log('new update name: ', name)
     const id = event.target.getAttribute('data-id');
+    // console.log('new update name: ', name)
+  
         if (name && description) {
             // alert(name);    
 
             // PUT request to the API endpoint to update
-            const response = await fetch(`/api/blogpost/${id}`, {
+            const response = await fetch(`/api/blogPost/${id}`, {
                 method: 'PUT',
                 body: JSON.stringify({ name, description }),
                 headers: { "Content-Type": "application/json" } 
             });
             
             if (response.ok) {
-                alert('Your post has been updated.');
-                document.location.replace('/');
+                alert("Your Post has been Updated!");
+                document.location.replace('/profile');
             } else {
                 alert(`|FAILED TO UPDATE| `);
             }
@@ -77,7 +77,7 @@ const cancelUpdateHandler = async(event) => {
 };
 
 
-// Add event listeners for our buttons
+//* Add event listeners for our buttons
 //delete button
 document.querySelectorAll('.delete-btn').forEach(function(blogPost) {
     blogPost.addEventListener('click', deletePostHandler);
@@ -92,4 +92,4 @@ document.querySelectorAll('.edit-btn').forEach(function(blogPost) {
 document.querySelector('.cancel-btn').addEventListener('click', cancelUpdateHandler);
 
 // Update and save button
-document.querySelector('.update-btn').addEventListener('click', updatePostHandler);
+document.querySelector('.edit-blog-form').addEventListener('submit', updatePostHandler);
