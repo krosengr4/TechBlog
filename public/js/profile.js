@@ -35,7 +35,7 @@ const renderUpdatePage = async(event) => {
     newBlogBtn.setAttribute("style", "display: none;"); 
 
     const editForm = document.querySelector('.edit-blog-form');
-    editForm.setAttribute("style", "display: block;");
+
     editForm.setAttribute("data-id", `${id}`);
     
     alert(id);
@@ -44,23 +44,11 @@ const renderUpdatePage = async(event) => {
 // Handler for update and post button (after edit-form render).
 const updatePostHandler = async (event) => {
     event.preventDefault();
-    // alert('You clicked Update and Save button');
 
-    const id = event.target.getAttribute('data-id');
-    // const editForm = document.querySelector('.edit-blog-form');
-    // editForm.setAttribute("data-id", `${id}`);
-
-    alert(id);
-    alert(event.target);
     //query our elements
     const name = document.querySelector('#new-title').value.trim();
     const description = document.querySelector('#new-description').value.trim();
-
-    // console.log("New blog name = ", name);
-    // console.log("New blog desc = ", description);
-
-    // alert(name);    
-    // alert(description);
+    const id = event.target.getAttribute('data-id');
 
         if (name && description) {
             alert(name);    
