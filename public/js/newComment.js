@@ -16,22 +16,22 @@ const newCommentHandler = async (event) => {
     if (commentContent) {
         // alert(commentContent.length);
         
-        // const postId = req.body.params;
+        const postId = req.body.params;
         // const postId = document.location.pathname.split("/")[2];
 
 
-        // alert(req.body.params);
+        alert(postId);
         
         const response = await fetch("/api/comment", {
             method: "POST",
-            body: JSON.stringify({ content: commentContent, blogPost_id: 1 }), //! FIX THIS
+            body: JSON.stringify({ content: commentContent, blogPost_id: postId }), //! FIX THIS
             headers: { 'Content-Type': 'application/json' },            
         });
         if (response.ok) {
             // document.location.replace(`/profile`);
             document.location.replace(`/blogPost/${req.params.id}`);
         } else {
-            alert("Comment could not be saved to the post");
+            alert("You must be logged in to post a comment. Click login or signup below!");
         }
     }
 };
