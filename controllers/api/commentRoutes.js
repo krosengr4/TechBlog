@@ -10,13 +10,14 @@ router.post("/", async (req, res) => {
         const newComment = await Comment.create({
             ...req.body,
             user_id: req.session.user_id,
+            blogPost_id: req.params.id
         });
 
         res.status(200).json(newComment);
-        console.log('new comment = ', newComment);
+        // console.log('new comment = ', newComment);
     } catch (err) {
         res.status(400).json(err);
-        console.log('Could not make a new comment', err);
+        console.log('Could not make a new comment');
     }
 });
 

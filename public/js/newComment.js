@@ -5,7 +5,7 @@
 // const commentTextEl = document.querySelector('#comment');
 
 const newCommentHandler = async (event) => {
-    // event.preventDefault();
+    event.preventDefault();
 
     const commentContent = document.querySelector('#comment').value.trim();
     const postId = event.target.getAttribute('data-id');
@@ -13,7 +13,7 @@ const newCommentHandler = async (event) => {
     
     const editForm = document.querySelector('.new-comment-form');
     editForm.setAttribute("data-id", `${postId}`);
-    // alert(postId);
+    alert(postId);
     
     if (commentContent) {
         
@@ -31,10 +31,15 @@ const newCommentHandler = async (event) => {
     }
 };
 
+document.querySelector('.new-comment-form').addEventListener('submit', newCommentHandler);
+
+
 // document.querySelector("#postComment").addEventListener("submit", newCommentHandler);
 // document.querySelector('.new-comment-form').addEventListener('submit', newCommentHandler);
 
-document.querySelector('.post-comment').addEventListener('click', newCommentHandler);
+// document.querySelector('.post-comment').addEventListener('click', newCommentHandler);
+
+
 
 //Executing (default): INSERT INTO `blogPost` (`id`,`name`,`description`,`date_created`,`user_id`) VALUES (DEFAULT,?,?,?,?);
 

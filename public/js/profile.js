@@ -49,6 +49,7 @@ const updatePostHandler = async (event) => {
     const name = document.querySelector('#new-title').value.trim();
     const description = document.querySelector('#new-description').value.trim();
     const id = event.target.getAttribute('data-id');
+    alert(id);
     // console.log('new update name: ', name)
   
         if (name && description) {
