@@ -13,7 +13,7 @@ if (process.env.JAWSDB_URL) {
         process.env.DB_USER,
         process.env.DB_PASSWORD,
         {
-            host: '127.0.0.1', //!<--- "127.0.0.1" or "localhost"
+            host: 'localhost', //!<--- "127.0.0.1" or "localhost"
             dialect: 'mysql',
             // dialectOptions: {
             //     socketPath: '/Applications/MAMP/tmp/mysql/mysql.sock'
