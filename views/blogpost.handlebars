@@ -1,10 +1,10 @@
 {{!-- ! This file contains blogpost html --}}
 
 <div class="blogpost">
-    <h2 class="post-title">{{blogPost.name}}</h2>
-    <p class="main-desc">{{blogPost.description}}</p>
-    <p class="created-by">Created by {{blogPost.user.name}} </p>
-    <p> Created on {{ blogPost.date_created }}</p>
+    <h2>{{name}}</h2>
+    <p class="main-desc">{{description}}</p>
+    <p class="created-by">Created by {{user.name}} </p>
+    <p> Created on {{ date_created }}</p>
     <p>
       <div>
         {{!-- <a href="/updatePost"><button class="update-btn" data-id="{{blogPost.id}}">Update</button></a> --}}
@@ -12,28 +12,32 @@
     </p>
 </div>
 
-<form class="new-comment-form" data-id="{{id}}">
+<form class="new-comment-form" action="/api/comment/{{id}}" method="POST">
   <div class="comments">
     <h3 class="add-comment">Add a Comment!</h3>
-      <input class="title-input" type="text" id="comment" name="post-title"></input>
-      <button type="submit" class="post-comment" id="postComment" data-id="{{id}}">Post comment</button>
+    <div class="mb-3 p-3">
+      <label class="form-label"> Add your comment! </label>
+      {{!-- <input class="title-input" type="text" id="comment" /> --}}
+      <input type="text" class="form-control" id="comment-content" name="content" required>
+    </div>
+      <button type="submit" class="post-comment">Post comment</button>
   </div>
 </form>
+
+
   <h3 class="comment-title">Comments: </h3>
     {{#each comment as |comment|}}
     <section class="comment">
         <header class="card-header bg-dark comment-header">
         </header>
         <div class="mb-3 p-3">
-            <p>{{comment.content}}</p>
-            <p> Commented By: {{comment.user_id}} </p>
-             <p> Commented On:  {{comment.date_created}}</p>
-            {{!-- <span class="text-dark">-{{comment.user.username}} {{format_date comment.date_created}}</span> --}}
+            <p class="comment-content">{{comment.content}}</p>
+             <p class="date-created"> Commented On:  {{comment.date_created}}</p>
         </div>
     </section>
     {{/each}}
 </div>
 
 {{!-- Link with stylesheet and script --}}
-<script src="/js/newComment.js"></script>
+{{!-- <script src="/js/newComment.js"></script> --}}
 <link rel="stylesheet" href="/css/blogpost.css">

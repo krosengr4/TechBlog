@@ -85,7 +85,7 @@ router.get('/blogPost/:id', async (req, res) => {
             attributes: ['name']
           },
           {
-            model: Comment, 
+            model: Comment,
             include: {
               model: User,
               attributes: ['name']
@@ -95,19 +95,21 @@ router.get('/blogPost/:id', async (req, res) => {
       });
 
       const commentData = await Comment.findAll({
-        where: { blogPost_id: req.params.id },
+        where:  {blogPost_id: req.params.id},
         attributes: ["id", "content", "date_created", "user_id", "blogPost_id"],
       })
 
-      console.log(blogPostData.comments);
-      console.log("logged in: ", req.session.logged_in);
-
+      // console.log('COMMENT DATA:',commentData);
+      // console.log("logged in: ", req.session.logged_in);
+      console.log('req params id: ', req.params.id );
+      console.log('REQ BODY: ', req.body );
+      
       if(blogPostData) {
         const blogPost = blogPostData.get({ plain: true });
         const comment = commentData.map((post) => post.get({ plain:true })); 
         res.render("blogpost", {
-          blogPost,
-          comment,
+          ...blogPost,
+            comment,
           logged_in: req.session.logged_in
         });
       } else {

@@ -31,3 +31,7 @@ h2 {
     color: rgb(22, 83, 36);
     background-color: lightgreen;
 }
+
+.new-comment-form {
+    display: flex;
+}

@@ -16,6 +16,7 @@ Comment.init (
         },
         content: {
             type: DataTypes.STRING,
+            allowNull: false
         },
         date_created: {
             type: DataTypes.DATE,
@@ -27,7 +28,7 @@ Comment.init (
             allowNull: false,
             references: {
                 model: 'blogPost',
-                key: 'id',
+                key: 'id'
             },
         },
         user_id: {
