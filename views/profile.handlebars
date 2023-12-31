@@ -3,7 +3,7 @@
 <div class="profile-main">
   <div class="row">
     <div class="col-auto">
-      <h2>Welcome, {{name}}! </h2>
+      <h2 id="userWelcome">Welcome, {{name}}! </h2>
     </div>
   </div>
   <div class="new-post">
@@ -52,52 +52,3 @@
 {{!-- Link with stylesheet and script --}}
 <script src="./js/profile.js"></script>
 <link rel="stylesheet" href="/css/profile.css">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{{!-- </div> --}}
-
-{{!-- <button class="newPost-btn"></button> --}}
-
-
-
-{{!-- <div class="row mt-4">
-  <div class="col-md-6">
-    <h3>What would you like to blog about?</h3>
-
-    <form class="form mew-post-form">
-      <div class="form-group">
-        <label for="post-title">Post Title:</label>
-        <input class="form-input" type="text" id="post-title" name="post-title" />
-      </div>
-      <div class="form-group">
-        <label for="blog-post">Your Post:</label>
-        <textarea class="form-input" id="blog-post" name="blog-post"></textarea>
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Post!</button>
-      </div>
-    </form>
-  </div>
-</div> --}}
-
-    {{!-- compare logged_on.id to id in the post & only see logged on users posts --}}
-    {{!-- If user.userName === blogPost.user_id --}}
-    {{!-- {{#if (user.userName = blogPost.user_id)}} --}}

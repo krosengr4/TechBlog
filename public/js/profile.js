@@ -25,6 +25,9 @@ const renderUpdatePage = async(event) => {
     // event.preventDefault();
     // alert('EDIT POST');
 
+    const welcomeMessage = document.querySelector('#userWelcome');
+    welcomeMessage.innerHTML = "Update your post!";
+
     const id = event.target.getAttribute('data-id');
     // alert(id);
 

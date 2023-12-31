@@ -34,4 +34,40 @@ h2 {
 
 .new-comment-form {
     display: flex;
+    /* justify-content: center; */
+}
+
+.post-comment {
+    padding: 8px;
+    color: rgb(22, 83, 36);
+    background-color: rgb(29, 29, 81);
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.post-comment:hover {
+    color: rgb(22, 83, 36);
+    background-color: lightgreen;
+}
+
+.add-comment {
+    font-size: 48px;
+}
+
+.form-control {
+    width: 90%;
+    padding: 22px;
+    /* position: relative; */
+    /* right: 90px; */
+    display: flex;
+    justify-content: center;
+}
+
+.comment-title {
+    font-size: 48px;
+}
+
+.comment-content {
+    font-size: 26px;
 }
