@@ -7,6 +7,16 @@
     {
         "content": "This is a comment",
         "user_id": "2",
-        "blogPost_id": "4"
+        "blogPost_id": "3"
+    }, 
+    {
+        "content": "Keep the good stuff coming!",
+        "user_id": "2",
+        "blogPost_id": "1"
+    },
+    {
+        "content": "I really enjoyed this wonderful and thought out post! Great job",
+        "user_id": "2",
+        "blogPost_id": "1"
     }
 ]

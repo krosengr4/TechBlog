@@ -8,10 +8,5 @@
         "name": "Tupac Shakur",
         "userName": "2pac",
         "password": "password456"
-    },
-    {
-        "name": "Kevin Rosengren",
-        "userName": "kros",
-        "password": "krospass"
     }
 ]
